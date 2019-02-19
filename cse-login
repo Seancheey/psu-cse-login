@@ -3,7 +3,7 @@ INFO_FILE=~/.psu_login_info
 
 if [[ $1 && $1 == '--help' ]]
 then
-	echo 'Usage ./cse-login [machine number]'
+	echo 'Usage cse-login [machine number]'
 	echo "	User configuration file located in: $INFO_FILE"
 	echo '	For update request and more, please contact adls371@outlook.com'
 	exit 0
@@ -25,4 +25,4 @@ fi
 
 [ $1 ] && host=$1 || host=$(printf "%02d" `expr $RANDOM % 20 + 1`)
 echo user=$usr connecting to machine $host ...
-./cse-login-simulator $usr $pass $host
+cse-login-simulator $usr $pass $host

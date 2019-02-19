@@ -4,7 +4,7 @@ set password [lindex $argv 1]
 set hostnumber [lindex $argv 2]
 
 if {[llength $argv] < 3} {
-	send_user "Usage: ./cse-login-simulator username password hostnumber\n"
+	send_user "Usage: cse-login-simulator username password hostnumber\n"
 	exit 1
 }
 
@@ -65,7 +65,7 @@ set timeout 60
 
 expect {
 	"cse" {
-		send "bash"
+		send "bash\r"
 		send "stty erase \\^?\r"
 	}
 	timeout {
