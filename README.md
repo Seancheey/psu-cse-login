@@ -15,7 +15,6 @@ Prerequisite
 ---
 * Any Linux/MacOS machine
 * A configured DUO Mobile app installed on your phone
-* Cisco AnyConnect if you are using it outside Penn State
 
 Installation
 ---
@@ -24,8 +23,8 @@ Installation
 
 Dependencies
 ---
+* Cisco AnyConnect if you are using it outside Penn State (installed in /opt/cisco/anyconnect/bin/vpn)
 * expect (usually comes with system)
-* bash
 
 Usage
 ---
