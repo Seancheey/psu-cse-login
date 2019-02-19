@@ -4,13 +4,17 @@ PSU CSE login helper
 Functions
 ---
 
-1. one-command-quick-login with one tap of DUO push
-2. eliminate 'delete' button malfunctioning in vim
-3. eliminate need to type in password every time
+Quick login to Penn State cse Linux lab
+
+1. one-command login with one tap of DUO push
+2. eliminate 'delete' key malfunctioning in vim
+3. eliminate needs to type password every time
 
 Prerequisite
 ---
-Any Unix machine
+* Any Linux/MacOS machine
+* A configured DUO Mobile app installed on your phone
+* Cisco AnyConnect if you are using it outside Penn State
 
 Dependencies
 ---
@@ -25,7 +29,7 @@ Usage
 
 Configuration
 ---
-* Config File Location: ~/.psu_login_info
+* Config File Location: `~/.psu_login_info`
 
 Contact
 ---
