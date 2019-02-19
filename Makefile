@@ -1,6 +1,7 @@
-PREFIX=/usr
-BINDIR=$(DESTDIR)$(PREFIX)/bin
+PREFIX=/usr/local
+BINDIR=$(PREFIX)/bin
+MAN=$(PREFIX)/share/man
 
 install:
-	install -c cse-login $(BINDIR)
-	install -c cse-login-simulator $(BINDIR)
+	install cse-login $(BINDIR)
+	install cse-login-simulator $(BINDIR)
