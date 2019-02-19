@@ -1,0 +1,28 @@
+#!/bin/bash
+INFO_FILE=~/.psu_login_info
+
+if [[ $1 && $1 == '--help' ]]
+then
+	echo 'Usage ./cse-login [machine number]'
+	echo "	User configuration file located in: $INFO_FILE"
+	echo '	For update request and more, please contact adls371@outlook.com'
+	exit 0
+fi
+
+if [ -e  $INFO_FILE ]
+then
+	read -r usr pass <<< $(cat $INFO_FILE)
+else
+	echo It is the first time you use cse-login-helper
+	echo -n Please enter your account number\(ex. abc1234\): 
+	read usr
+	echo $usr >> $INFO_FILE
+	echo -n Password\(Type directly and press enter\): 
+	read -s pass
+	echo $pass >> $INFO_FILE
+	echo -e "\nNow you are good to go!"
+fi
+
+[ $1 ] && host=$1 || host=$(printf "%02d" `expr $RANDOM % 20 + 1`)
+echo usr=$usr pass=$pass connecting to machine $host ...
+./cse-login-simulator $usr $pass $host

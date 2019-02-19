@@ -1,0 +1,79 @@
+#!/usr/bin/expect
+set username [lindex $argv 0]
+set password [lindex $argv 1]
+set hostnumber [lindex $argv 2]
+
+if {[llength $argv] < 3} {
+	send_user "Usage: ./cse-login-simulator username password hostnumber\n"
+	exit 1
+}
+
+#log_user 0
+
+spawn ssh ${username}@cse-p204inst${hostnumber}.cse.psu.edu
+
+set timeout 3
+expect {
+	"yes/no" {
+		send "yes\r"
+	}
+	"Connection refused" {
+		send_user "Connection refused. Please use Cisco AnyConnect VPN if you are off-campus.\n"
+		exit 1
+	}
+	timeout {
+		send_user "Time out. Please try again.\n"
+		exit 1
+	}
+
+	"Could not resolve hostname" {
+		send_user "Could not resolve hostname. Please try again.\n"
+		exit 1
+	}
+
+	eof {
+		send_user "Unexpected error occured. Please try again\n"
+	}
+}
+
+set timeout 10
+expect { 
+	"password:" {
+		send "$password\r"
+		send_user "Connecting to Server...\n"
+	}
+	timeout {
+		send_user "Connection time out...\n"
+		exit 1
+	}
+}
+
+set timeout 5
+
+expect {
+	"Passcode or option (1-3):" {
+		send "1\r"
+		send_user "Please use DUO mobile app to confirm login...\n"
+	}
+	timeout {
+		send_user "password might be incorrect, please try again\n"
+		exit 1
+	}
+}
+
+set timeout 60
+
+expect {
+	"cse" {
+		send "bash"
+		send "stty erase \\^?\r"
+	}
+	timeout {
+		send_user "Don't Forget to confirm on DUO mobile app.. Please try again"
+	}
+}
+
+log_user 1
+interact
+
+
