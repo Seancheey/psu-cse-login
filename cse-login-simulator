@@ -8,7 +8,7 @@ if {[llength $argv] < 3} {
 	exit 1
 }
 
-#log_user 0
+log_user 0
 
 spawn ssh ${username}@cse-p204inst${hostnumber}.cse.psu.edu
 
