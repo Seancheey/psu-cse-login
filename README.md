@@ -16,16 +16,21 @@ Prerequisite
 * A configured DUO Mobile app installed on your phone
 * Cisco AnyConnect if you are using it outside Penn State
 
+Installation
+---
+* `make install`
+* The binary files *(cse-login,cse-login-simulator)* will be automatically put into `/usr/local/bin`
+
 Dependencies
 ---
-* expect
+* expect (usually comes with system)
 * bash
 
 Usage
 ---
-* simple login `./cse-login`
-* specify host machine `./cse-login 24`
-* manual login with user/password `./cse-login-simulator [username] [password] [machine]`
+* simple login `cse-login`
+* specify host machine `cse-login 24`
+* manual login with user/password `cse-login-simulator [username] [password] [machine]`
 
 Configuration
 ---
