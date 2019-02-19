@@ -8,6 +8,15 @@ Functions
 2. eliminate 'delete' button malfunctioning in vim
 3. eliminate need to type in password every time
 
+Prerequisite
+---
+Any Unix machine
+
+Dependencies
+---
+* expect
+* bash
+
 Usage
 ---
 * simple login `./cse-login`
