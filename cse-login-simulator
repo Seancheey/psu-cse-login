@@ -8,9 +8,9 @@ if {[llength $argv] < 3} {
 	exit 1
 }
 
-log_user 0
+#log_user 0
 
-spawn ssh ${username}@cse-p204inst${hostnumber}.cse.psu.edu
+spawn ssh -t ${username}@cse-p204inst${hostnumber}.cse.psu.edu "bash -l"
 
 set timeout 3
 expect {
@@ -55,17 +55,12 @@ expect {
 		send "1\r"
 		send_user "Please use DUO mobile app to confirm login...\n"
 	}
-	timeout {
-		send_user "password might be incorrect, please try again\n"
-		exit 1
-	}
 }
 
 set timeout 60
 
 expect {
 	"cse" {
-		send "bash\r"
 		send "stty erase \\^?\r"
 	}
 	timeout {

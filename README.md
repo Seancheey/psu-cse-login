@@ -9,6 +9,7 @@ Quick login to Penn State cse Linux lab
 1. one-command login with one tap of DUO push
 2. eliminate 'delete' key malfunctioning in vim
 3. eliminate needs to type password every time
+4. use **bash** as default shell instead of old tcsh
 
 Prerequisite
 ---
