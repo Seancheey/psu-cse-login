@@ -40,7 +40,15 @@ while {$connected == 0} {
 					exit
 				}
 			}
-			expect "Group" {send "0\r" }
+			expect {
+				"error:" {
+					send_user "Cisco AnyConnect is already running. Please connect VPN manually \n"
+					exit 1
+				}
+			 	"Group" {
+					send "0\r" 
+				}
+			}
 			expect "Username" {send "$username\r" }
 			expect "Password" {send "$password\r"}
 			expect "accept" {send "y\r"}
