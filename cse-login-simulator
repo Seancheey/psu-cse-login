@@ -40,7 +40,7 @@ set timeout 10
 expect { 
 	"password:" {
 		send "$password\r"
-		send_user "Connecting to Server...\n"
+		send_user "Please use DUO mobile app to confirm login...\n"
 	}
 	timeout {
 		send_user "Connection time out...\n"
@@ -53,7 +53,6 @@ set timeout 5
 expect {
 	"Passcode or option (1-3):" {
 		send "1\r"
-		send_user "Please use DUO mobile app to confirm login...\n"
 	}
 }
 
@@ -70,5 +69,3 @@ expect {
 
 log_user 1
 interact
-
-
