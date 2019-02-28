@@ -1,6 +1,8 @@
 PSU CSE login helper
 ===
 
+![](demo/demo.gif)
+
 Functions
 ---
 
@@ -41,3 +43,11 @@ Contact
 ---
 
 For further info, consult **adls371 at outlook.com**
+
+Support me please
+---
+
+[![GitHub stars](https://img.shields.io/github/stars/SeanCheey/psu-cse-login.svg?style=social&label=Star)](#)
+[![GitHub followers](https://img.shields.io/github/followers/ultrasilicon.svg?style=social&label=Follow)](https://github.com/Ultrasilicon)
+
+
