@@ -21,7 +21,10 @@ Prerequisite
 
 Installation
 ---
-* `make install`
+```
+git clone git@github.com:Seancheey/psu-cse-login.git
+make install
+```
 * The binary files *(cse-login,cse-login-simulator)* will be automatically put into `/usr/local/bin`
 
 Dependencies
@@ -48,6 +51,5 @@ Support me please
 ---
 
 [![GitHub stars](https://img.shields.io/github/stars/SeanCheey/psu-cse-login.svg?style=social&label=Star)](#)
-[![GitHub followers](https://img.shields.io/github/followers/ultrasilicon.svg?style=social&label=Follow)](https://github.com/Ultrasilicon)
 
 
