@@ -66,6 +66,11 @@ while {$connected == 0} {
 			exit 1
 		}
 
+		"REMOTE HOST IDENTIFICATION HAS CHANGED" {
+			send_user "Remote host changed. Please remove corresponding record in ~/.ssh/known_hosts.\n"
+			exit 1
+		}
+
 		eof {
 			send_user "Unexpected error occured. Please try again\n"
 			exit 1
